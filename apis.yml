@@ -1,23 +1,65 @@
 aid: axoft
+
 name: Axoft
-description: 'Axoft is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Axoft is an Argentine software company offering the Tango ERP suite, a cloud and on‑premise platform for accounting, HR, point‑of‑sale and business management. Founded over 35 years ago, it serves thousands of SMEs and large enterprises across Argentina, providing automation, compliance and scalable solutions. The company emphasizes community support, extensive training, and integration capabilities, positioning itself as a leading ERP provider in the region.'
+
 url: https://raw.githubusercontent.com/api-evangelist/axoft/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-27 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-27'
+
 modified: '2026-09-27'
+
 tags:
-- Company
-apis: []
+- ERP
+- Software
+- Argentina
+- Business Management
+- Cloud
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: LLMsTxt
+  url: llms/axoft-llms.txt
+- type: Hosts
+  url: hosts/axoft-hosts.yml
+- type: GitHubOrganization
+  url: https://github.com/Axoft
+- type: DomainSecurity
+  url: security/axoft-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.axoft.com
+
+apis: []
+
+x-coverage:
+  state: none
+  reason: no-developer-program
+  method: derived
+  generated: '2026-09-27'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: >-
+    the company publishes no developer documentation host and no machine-readable contract on its own domain
+  evidence:
+  - url: https://www.nasdaqprivatemarket.com/
+    status: 200
+x-enrichment:
+  date: '2026-09-27'
+  status: enriched
+  artifacts_added: 7
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
